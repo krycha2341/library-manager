@@ -1,0 +1,254 @@
+{
+	"info": {
+		"_postman_id": "c54e8a15-afb1-4a18-9bc3-19b067a492a1",
+		"name": "library manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8982842"
+	},
+	"item": [
+		{
+			"name": "list books",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUri}}/books?limit=2&offset=0&title=Eos&author=Mathew",
+					"host": [
+						"{{baseUri}}"
+					],
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "2"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "title",
+							"value": "Eos"
+						},
+						{
+							"key": "author",
+							"value": "Mathew"
+						},
+						{
+							"key": "first_name",
+							"value": "krystian",
+							"disabled": true
+						},
+						{
+							"key": "last_name",
+							"value": "wozniak",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "book details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUri}}/books/:id",
+					"host": [
+						"{{baseUri}}"
+					],
+					"path": [
+						"books",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "26"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "borrow book",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{baseUri}}/books/:id/customers/:customerId/borrow",
+					"host": [
+						"{{baseUri}}"
+					],
+					"path": [
+						"books",
+						":id",
+						"customers",
+						":customerId",
+						"borrow"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "7"
+						},
+						{
+							"key": "customerId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "return book",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{baseUri}}/books/:id/customers/:customerId/return",
+					"host": [
+						"{{baseUri}}"
+					],
+					"path": [
+						"books",
+						":id",
+						"customers",
+						":customerId",
+						"return"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "7"
+						},
+						{
+							"key": "customerId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUri}}/customers",
+					"host": [
+						"{{baseUri}}"
+					],
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "customer details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUri}}/customers/:id",
+					"host": [
+						"{{baseUri}}"
+					],
+					"path": [
+						"customers",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add customer",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"test1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUri}}/customers",
+					"host": [
+						"{{baseUri}}"
+					],
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete customer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUri}}/customers/:id",
+					"host": [
+						"{{baseUri}}"
+					],
+					"path": [
+						"customers",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

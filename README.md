@@ -5,7 +5,9 @@ Laravel 10.10<br>
 
 ```
 composer install
+cp -n .env.example .env
 php artisan serve
+php artisan migrate
 ```
 
 ## Generowanie książek

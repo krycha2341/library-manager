@@ -10,6 +10,7 @@ class CustomerTransformer extends TransformerAbstract
     public function transform(CustomerVO $customerVO): array
     {
         return [
+            'id' => $customerVO->getId(),
             'first_name' => $customerVO->getFirstName(),
             'last_name' => $customerVO->getLastName(),
         ];

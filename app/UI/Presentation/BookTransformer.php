@@ -10,6 +10,7 @@ class BookTransformer extends TransformerAbstract
     public function transform(BookVO $bookVO): array
     {
         return [
+            'id' => $bookVO->getId(),
             'title' => $bookVO->getTitle(),
             'author' => $bookVO->getAuthor(),
             'publication_date' => $bookVO->getPublicationDate(),
